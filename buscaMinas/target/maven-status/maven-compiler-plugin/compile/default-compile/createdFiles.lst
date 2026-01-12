@@ -1,0 +1,5 @@
+modelo\Tablero.class
+modelo\Espacio.class
+com\mycompany\buscaminas\BuscaMinas.class
+controlador\Controller.class
+vista\Vista.class
