@@ -4,6 +4,7 @@
  */
 package controlador;
 import modelo.*;
+import vista.*;
 
 /**
  *
@@ -11,10 +12,12 @@ import modelo.*;
  */
 public class Controller {
     private Tablero tab;
+    private Tabla t;
 
-    public Controller(Tablero tab) {
+    public Controller(Tablero tab, Tabla t) {
         this.tab = tab;
-        System.out.println(tab.toString());
+        this.t = t;
+        t.setVisible(true);
     }
     
     

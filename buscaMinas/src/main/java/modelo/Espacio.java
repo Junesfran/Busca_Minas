@@ -12,35 +12,19 @@ import java.util.HashMap;
  * @author Nestor y Asociados
  */
 public class Espacio {
-    private Map<String, Boolean> direcciones;
     private boolean mina;
     private int numMinas;
 
     public Espacio() {
-        direcciones = new HashMap<String, Boolean>();
         this.mina = false;
-        minasIniciales();
-    }
-    
-    private void minasIniciales(){
-        direcciones.put("Izquierda", false);
-        direcciones.put("Derecha", false);
-        direcciones.put("Arriba", false);
-        direcciones.put("Abajo", false);
-        
-        //Diagonales
-        direcciones.put("ArribaIzq", false);
-        direcciones.put("ArribaDer", false);
-        direcciones.put("AbajoIzq", false);
-        direcciones.put("AbajoDer", false);
     }
     
     public void colocarMina(){
         this.mina = true;
     }
     
-    public void minaCerca(String posicion){
-        direcciones.put(posicion, true);
+    public void minaCerca(){
+        //direcciones.put(posicion, true);
         numMinas++;
     }
 
@@ -49,10 +33,11 @@ public class Espacio {
         String aux = "";
         
         if(mina){
-            aux = 1+"";
+            aux = "X";
         }else{
-            aux = 0+"";
+            aux = numMinas+"";
         }
+        
         return aux;
     }
     

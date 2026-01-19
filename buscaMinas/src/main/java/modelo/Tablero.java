@@ -11,9 +11,23 @@ public class Tablero {
 
     private List<List> tabla;
 
-    public Tablero(int dimensiones, int numeroMinas) {
+    public Tablero() {
         tabla = new ArrayList<>();
-
+    }
+//    public Tablero(int dimensiones, int numeroMinas) {
+//        tabla = new ArrayList<>();
+//
+//        for (int i = 0; i < dimensiones; i++) {
+//            List<Espacio> fila = new ArrayList<Espacio>();
+//            for (int j = 0; j < dimensiones; j++) {
+//                fila.add(new Espacio());
+//            }
+//            tabla.add(fila);
+//        }
+//        posicionMinas(dimensiones, numeroMinas);
+//    }
+    
+    public List MontarTablero(int dimensiones, int numeroMinas){
         for (int i = 0; i < dimensiones; i++) {
             List<Espacio> fila = new ArrayList<Espacio>();
             for (int j = 0; j < dimensiones; j++) {
@@ -22,6 +36,8 @@ public class Tablero {
             tabla.add(fila);
         }
         posicionMinas(dimensiones, numeroMinas);
+        
+        return tabla;
     }
 
     private void posicionMinas(int dim, int numMinas){
@@ -31,7 +47,22 @@ public class Tablero {
             
             Espacio e = (Espacio) tabla.get(x).get(y);
             e.colocarMina();
+            sumarMinas(x,y);
         }
+    }
+    
+    private void sumarMinas(int x, int y){
+        ((Espacio) tabla.get(x).get(y)).minaCerca();
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                try{
+                    ((Espacio) tabla.get(x+i).get(y+j)).minaCerca();
+                }catch(IndexOutOfBoundsException e){
+                    
+                }
+            }
+        }
+        
     }
     
     @Override
