@@ -1,7 +1,12 @@
 vista\Tabla$1.class
 modelo\Tablero.class
+vista\Death$1.class
+ao\TableroRepository.class
 com\mycompany\buscaminas\BuscaMinas.class
 controlador\Controller.class
+vista\Death.class
+vista\Death$2.class
 modelo\Espacio.class
 vista\Tabla.class
+controlador\Controller$1.class
 vista\Vista.class
