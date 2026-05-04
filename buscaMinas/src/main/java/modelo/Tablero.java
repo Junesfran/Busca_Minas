@@ -7,25 +7,18 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tablero {
+public class Tablero{
 
     private List<List> tabla;
 
     public Tablero() {
         tabla = new ArrayList<>();
     }
-//    public Tablero(int dimensiones, int numeroMinas) {
-//        tabla = new ArrayList<>();
-//
-//        for (int i = 0; i < dimensiones; i++) {
-//            List<Espacio> fila = new ArrayList<Espacio>();
-//            for (int j = 0; j < dimensiones; j++) {
-//                fila.add(new Espacio());
-//            }
-//            tabla.add(fila);
-//        }
-//        posicionMinas(dimensiones, numeroMinas);
-//    }
+
+    public List<List> getTabla() {
+        return tabla;
+    }
+
     
     public List MontarTablero(int dimensiones, int numeroMinas){
         for (int i = 0; i < dimensiones; i++) {
@@ -36,6 +29,11 @@ public class Tablero {
             tabla.add(fila);
         }
         posicionMinas(dimensiones, numeroMinas);
+        
+        //Chuleta
+        for (List list : tabla) {
+            System.out.println(list);
+        }
         
         return tabla;
     }

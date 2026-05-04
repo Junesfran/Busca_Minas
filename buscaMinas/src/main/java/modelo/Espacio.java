@@ -24,7 +24,6 @@ public class Espacio {
     }
     
     public void minaCerca(){
-        //direcciones.put(posicion, true);
         numMinas++;
     }
 

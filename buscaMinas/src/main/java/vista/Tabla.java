@@ -28,6 +28,7 @@ public class Tabla extends javax.swing.JFrame {
      */
     public Tabla() {
         initComponents();
+        
     }
 
     public void setjPanel1(JPanel jPanel1) {
@@ -50,6 +51,7 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(600, 500));
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
