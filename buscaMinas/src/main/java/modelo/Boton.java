@@ -11,11 +11,10 @@ import javax.swing.JButton;
  * @author Nestor y Asociados
  */
 public class Boton extends JButton{
-    private Espacio e;
-    private int x;
-    private int y;
 
-    public Boton(Espacio e) {
+    private Espacio e;
+    
+    public Boton(Espacio e){
         super("-");
         this.e = e;
     }
@@ -27,28 +26,6 @@ public class Boton extends JButton{
     public void setE(Espacio e) {
         this.e = e;
     }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "Boton{" + "e=" + e + ", x=" + x + ", y=" + y + '}';
-    }
-
     
     
 }

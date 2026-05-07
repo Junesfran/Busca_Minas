@@ -29,34 +29,34 @@ public class Tablero{
             tabla.add(fila);
         }
         posicionMinas(dimensiones, numeroMinas);
-        
-        //Chuleta
-        for (List list : tabla) {
-            System.out.println(list);
-        }
+       
         
         return tabla;
     }
 
     private void posicionMinas(int dim, int numMinas){
         for (int i = 0; i < numMinas; i++) {
-            int x = (int)(Math.random() * dim);
-            int y = (int)(Math.random() * dim);
+            int x = (int)(Math.random() * (dim-1));
+            int y = (int)(Math.random() * (dim-1));
             
-            Espacio e = (Espacio) tabla.get(x).get(y);
-            e.colocarMina();
-            sumarMinas(x,y);
+            if(((Espacio) tabla.get(y).get(x)).isMina()){
+                i--;
+            }else{
+              ((Espacio) tabla.get(y).get(x)).colocarMina();
+                sumarMinas(x,y);
+            }
         }
     }
     
+    
     private void sumarMinas(int x, int y){
-        ((Espacio) tabla.get(x).get(y)).minaCerca();
+        //((Espacio) tabla.get(x).get(y)).minaCerca();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 try{
-                    ((Espacio) tabla.get(x+i).get(y+j)).minaCerca();
+                    ((Espacio) tabla.get(y+i).get(x+j)).minaCerca();
                 }catch(IndexOutOfBoundsException e){
-                    
+                    System.out.println("Se salio");
                 }
             }
         }

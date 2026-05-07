@@ -17,6 +17,11 @@ public class Espacio {
 
     public Espacio() {
         this.mina = false;
+        this.numMinas = 0;
+    }
+
+    public boolean isMina() {
+        return mina;
     }
     
     public void colocarMina(){
